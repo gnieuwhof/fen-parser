@@ -2,6 +2,7 @@
 {
     class Castling : IProcess
     {
+        private bool processedChar;
         private readonly FenResult result;
 
 
@@ -48,6 +49,11 @@
                     this.result.BlackCanCastleQueenside = true;
                     break;
                 case '-':
+                    if(this.processedChar)
+                    {
+                        this.result.Error = true;
+                        step = null;
+                    }
                     break;
                 case ' ':
                     step = new EnPassant(this.result);
@@ -58,6 +64,8 @@
                     step = null;
                     break;
             }
+
+            this.processedChar = true;
         }
     }
 }

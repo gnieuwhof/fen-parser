@@ -34,6 +34,16 @@
         }
 
         [Test]
+        public void CastlingHyphen()
+        {
+            string fen = "8/8/8/8/8/8/8/8 w Kq- - 0 1";
+
+            FenResult result = FenParser.Parse(fen);
+
+            Assert.IsTrue(result.Error);
+        }
+
+        [Test]
         public void DoubleCastling()
         {
             string fen = "8/8/8/8/8/8/8/8 w KK - 0 1";
