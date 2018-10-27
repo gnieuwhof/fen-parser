@@ -92,6 +92,16 @@
         }
 
         [Test]
+        public void EnPassantHyphen()
+        {
+            string fen = "8/8/8/8/8/8/8/8 w - c4- 0 1";
+
+            FenResult result = FenParser.Parse(fen);
+
+            Assert.IsTrue(result.Error);
+        }
+
+        [Test]
         public void InvalidActiveColor()
         {
             string fen = "8/8/8/8/8/8/8/8 X - - 0 1";

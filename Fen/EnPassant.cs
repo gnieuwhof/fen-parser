@@ -2,6 +2,7 @@
 {
     class EnPassant : IProcess
     {
+        private bool processedChar;
         private readonly FenResult result;
 
 
@@ -42,6 +43,11 @@
             }
             else if (c == '-')
             {
+                if (this.processedChar)
+                {
+                    this.result.Error = true;
+                    step = null;
+                }
                 this.result.EnPassantSquare = "-";
             }
             else if (c == ' ')
@@ -53,6 +59,8 @@
                 this.result.Error = true;
                 step = null;
             }
+
+            this.processedChar = true;
         }
     }
 }
