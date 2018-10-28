@@ -9,7 +9,7 @@
         {
             string fen = "1R6/P1PN1p2/kpPbpK1P/Bpp2R2/2PrP1Q1/N1P1p1np/bpq1P1r1/5Bn1 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             if (result.Error)
             {

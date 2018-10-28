@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class FenParser
+    public class Fen
     {
         public static FenResult Parse(string fen)
         {

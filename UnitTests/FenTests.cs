@@ -20,7 +20,7 @@
                 "KKKKKKKK/" +
                 "KKKKKKKK w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsFalse(result.Error);
 
@@ -38,7 +38,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w Kq- - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -48,7 +48,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w KK - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -58,7 +58,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsFalse(result.Error);
 
@@ -76,7 +76,7 @@
         {
             string fen = "";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -86,7 +86,7 @@
         {
             string fen = "8/8/8/8/8/8/8/ w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -96,7 +96,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - c4- 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -106,7 +106,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w -KQkq - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -116,7 +116,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - -c4 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -126,7 +126,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 X - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -136,7 +136,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w X - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -146,7 +146,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - X 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -156,7 +156,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - 1a 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -166,7 +166,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - 0 X";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -176,7 +176,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - X 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -186,7 +186,7 @@
         {
             string fen = "7X/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -196,7 +196,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - 0 -1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -206,7 +206,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - -1 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -216,7 +216,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8   - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -226,7 +226,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w   - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -236,7 +236,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w -   0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -246,7 +246,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - 0";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -256,7 +256,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - -";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -266,7 +266,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8w--01";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -277,7 +277,7 @@
             string fen = null;
 
             Assert.Throws<ArgumentNullException>(
-                () => FenParser.Parse(fen));
+                () => Fen.Parse(fen));
         }
 
         [Test]
@@ -285,7 +285,7 @@
         {
             string fen = "ppppppp/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -295,7 +295,7 @@
         {
             string fen = "ppppppppp/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -305,7 +305,7 @@
         {
             string fen = "9/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -315,7 +315,7 @@
         {
             string fen = "8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -339,7 +339,7 @@
 
             foreach (string fen in fens)
             {
-                FenResult result = FenParser.Parse(fen);
+                FenResult result = Fen.Parse(fen);
 
                 Assert.IsFalse(result.Error);
             }
@@ -350,7 +350,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8/8 w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }
@@ -361,7 +361,7 @@
             string fen =
                 "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w - - 0 1";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsFalse(result.Error);
 
@@ -399,7 +399,7 @@
         {
             string fen = "8/8/8/8/8/8/8/8 w - - 0 0";
 
-            FenResult result = FenParser.Parse(fen);
+            FenResult result = Fen.Parse(fen);
 
             Assert.IsTrue(result.Error);
         }

@@ -43,7 +43,7 @@
     <Compile Include="ActiveColor.cs" />
     <Compile Include="Castling.cs" />
     <Compile Include="EnPassant.cs" />
-    <Compile Include="FenParser.cs" />
+    <Compile Include="Fen.cs" />
     <Compile Include="FenResult.cs" />
     <Compile Include="FullMoves.cs" />
     <Compile Include="HalfMoves.cs" />
