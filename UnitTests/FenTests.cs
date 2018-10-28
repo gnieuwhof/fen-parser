@@ -102,6 +102,26 @@
         }
 
         [Test]
+        public void HyphenBeforeCastling()
+        {
+            string fen = "8/8/8/8/8/8/8/8 w -KQkq - 0 1";
+
+            FenResult result = FenParser.Parse(fen);
+
+            Assert.IsTrue(result.Error);
+        }
+
+        [Test]
+        public void HyphenBeforeEnPassant()
+        {
+            string fen = "8/8/8/8/8/8/8/8 w - -c4 0 1";
+
+            FenResult result = FenParser.Parse(fen);
+
+            Assert.IsTrue(result.Error);
+        }
+
+        [Test]
         public void InvalidActiveColor()
         {
             string fen = "8/8/8/8/8/8/8/8 X - - 0 1";

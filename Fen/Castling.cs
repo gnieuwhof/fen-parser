@@ -3,6 +3,7 @@
     class Castling : IProcess
     {
         private bool processedChar;
+        private bool foundHyphen;
         private readonly FenResult result;
 
 
@@ -17,7 +18,7 @@
             switch (c)
             {
                 case 'K':
-                    if(this.result.WhiteCanCastleKingside)
+                    if(this.result.WhiteCanCastleKingside || this.foundHyphen)
                     {
                         this.result.Error = true;
                         step = null;
@@ -25,7 +26,7 @@
                     this.result.WhiteCanCastleKingside = true;
                     break;
                 case 'Q':
-                    if (this.result.WhiteCanCastleQueenside)
+                    if (this.result.WhiteCanCastleQueenside || this.foundHyphen)
                     {
                         this.result.Error = true;
                         step = null;
@@ -33,7 +34,7 @@
                     this.result.WhiteCanCastleQueenside = true;
                     break;
                 case 'k':
-                    if (this.result.BlackCanCastleKingside)
+                    if (this.result.BlackCanCastleKingside || this.foundHyphen)
                     {
                         this.result.Error = true;
                         step = null;
@@ -41,7 +42,7 @@
                     this.result.BlackCanCastleKingside = true;
                     break;
                 case 'q':
-                    if (this.result.BlackCanCastleQueenside)
+                    if (this.result.BlackCanCastleQueenside || this.foundHyphen)
                     {
                         this.result.Error = true;
                         step = null;
@@ -54,6 +55,7 @@
                         this.result.Error = true;
                         step = null;
                     }
+                    this.foundHyphen = true;
                     break;
                 case ' ':
                     step = new EnPassant(this.result);
